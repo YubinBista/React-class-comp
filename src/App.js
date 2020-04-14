@@ -1,27 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import SearchBar from './components/SearchBar';
 import './App.css';
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    
-    this.state = {lat: null};
-
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-      this.setState({
-        lat: position.coords.latitude });
-      },
-        err =>console.log(err)
-    );
-  }
+class App extends Component  {
   render(){
-    return(
-    <div> latitude: {this.state.lat} </div>
-    )
-  };
-};
-  
+  return (
+    <div className="ui container">
+      <SearchBar />
+    </div>
+  )
+  }
+}
+   
 
 export default App;
